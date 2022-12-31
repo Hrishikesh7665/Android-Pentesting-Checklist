@@ -1,0 +1,153 @@
+| **C01** | **SSL Pinning** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | An SSL pinning vulnerability in an Android app occurs when the app does not properly verify the server's SSL certificate or public key during the SSL/TLS handshake process, allowing a man-in-the-middle attacker to intercept and decrypt the app's communication. |  |  |
+| 1 | Missing SSL Pinning | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check if is it bypassable or not using Frida/Objection | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 3 | Check code manipulation possible or not | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C02** | **Root Detection** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | A root detection vulnerability in an Android app occurs when the app does not properly detect and prevent access by rooted devices, allowing users to potentially gain unauthorized access to the app's data or functionality. |  |  |
+| 1 | Missing Root Detection | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check if is it bypassable or not using frida/Objection | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 3 | Check that internal logic flow can be modified or not | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C03** | **Emulator Detection** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | An emulator detection vulnerability in an Android app occurs when the app does not properly detect and prevent access by emulators, allowing users to potentially bypass security controls or access unauthorized functionality. |  |  |
+| 1 | Missing Emulator Detection | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check if is it bypassable or not using frida | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C04** | **Sensitive data in ADB Logcat Logs** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | A sensitive data in ADB Logcat vulnerability in an Android app occurs when the app logs sensitive data, such as passwords or personal information, to the system log using Android Debug Bridge (ADB), potentially exposing the data to attackers or unauthorized users. |  |  |
+| 1 | Check Logcat logs for sensitive information/data | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check if is it bypassable or not using frida/Objection | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 3 | Check for any unencrypted request/data in Logcat logs | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C05** | **Sensitive data/info stored in Local Storage** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | A sensitive data stored in local storage vulnerability in an Android app occurs when the app stores sensitive data, such as passwords or personal information, in unencrypted or unsecured local storage on the device, potentially exposing the data to attackers or unauthorized users. |  |  |
+| 1 | Check for sensitive information/data store on Shared Preferences or not | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check for any information/data stored in temporary files or not | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 3 | Check if sensitive information/data is stored in the local storage database using strong encryption on or not | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 4 | Check for any information/data stored in any other files or not | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C06** | **Sensitive data/info in Application Memory** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | A sensitive data in application memory vulnerability in an Android app occurs when the app stores sensitive data, such as passwords or personal information, in memory in an unencrypted or unsecured manner, potentially exposing the data to attackers or unauthorized users who have access to the device's memory. |  |  |
+| 1 | Check for any sensitive information/data temporarily stored on Application Memory or not[ Use fridump.py (https://github.com/Nightbringer21/fridump/blob/master/fridump.py) ] | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C07** | **Weak Signer Certificate** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | A weak signer certificate vulnerability in an Android app occurs when the app is signed with a weak or compromised certificate, potentially allowing attackers to modify the app or gain unauthorized access to the app's functionality. |  |  |
+| 1 | Check if the app signed with a weak algorithm such as "SHC1withRSA" | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check for Janus Vulnerability | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 3 | Check for the application if is it signed with debug certificate or not | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C08** | **Vulnerable Android Activities** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Android activities are components of an Android app that represent a screen or part of the app's user interface. A vulnerable Android activity is one that contains vulnerabilities, such as insecure coding practices or the use of third-party libraries with known vulnerabilities, that could be exploited by attackers to gain unauthorized access to the app's data or functionality. |  |  |
+| 1 | Check for the protected activity that can be accessible by calling the activity from the ADB bypassing the Authentication activity (Authentication Bypass)Example: An application having a login screen if login is successful the app launch the second activity, and any user has to authenticate herself. But that can bypass though ADB by calling the second activity directly from ADB | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check for exported android activity is set false, and check for the android activity can activity can be launched by any other applications or not | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 3 | Check if any of the application activities can be hijacked through ADB or any others tools | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 4 | Check if any of the application activities cause the Denial of Service or App crash | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C09** | **WebView** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Android WebView is a component of an Android app that allows the app to display web content within the app's user interface. It can contain vulnerabilities, such as insecure coding practices improper validation, etc. |  |  |
+| 1 | Check for Cross sites scripting vulnerability in android activity WebView | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check for Local File Inclusion (LFI) vulnerability in android activity WebView | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 3 | Check for insecure JavaScript enabled for WebView | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C10** | **Intent Filters** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Intent redirection is an embedded intent it can be implicit or explicit Intent which is used to move one android component to another component. This vulnerability occurs when the developer does not retrieve the intent data via filtering. This vulnerability is similar to OpenRedirect for web security. |  |  |
+| 1 | Check for intent spoofing or intent sniffing vulnerabilities (those can occur when the developer does not retrieve the intent data via filtering) | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C11** | **Broadcast Receivers** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | A vulnerable Android Broadcast Receiver is a component of an Android app that allows the app to receive and respond to system-wide broadcasts, such as the receipt of a text message or the disconnection of a charger. It can be exploited |  |  |
+| 1 | Check the manifest file for the receiver tag and the exported attribute if it is True and if there is no other permission is set. It can be exploited. | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C12** | **Content Provider** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Content providers in Android are used to share data between applications. They use standard insert, update, delete, and query methods to access data and are assigned a special URI starting with "content://". If proper security controls are not implemented, it can lead to the leakage of information. An example of a content provider is the built-in SMS application, which can be accessed by other apps using a specific URI and the READ_SMS permission. There may be cases where content providers are not implemented for sharing data or where access is restricted to apps with proper permissions. |  |  |
+| 1 | If security controls are not properly implemented, content providers can lead to SQL injection. | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | If security controls are not properly implemented, content providers can lead to Path Traversal. | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 3 | If security controls are not properly implemented in content providers, it may lead to internal data access vulnerability | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C13** | **Source Code Obfuscation** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Source code obfuscation in Android is the process of making the source code of an Android app difficult to understand or reverse engineer, typically to protect intellectual property or prevent unauthorized modifications. |  |  |
+| 1 | Check for Code Obfuscation(PRO Guard) implemented or not | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | If Code Obfuscation is implemented partially check for the main sensitive codes is properly obfuscated | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C14** | **Sensitive Information/Auth-Keys Hardcoded** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Hardcoded information vulnerability is the practice of storing sensitive data, such as passwords or security keys, directly in the source code of an application, potentially exposing the data to attackers or unauthorized users who have access to the source code. |  |  |
+| 1 | Check the Source Code for any hardcoded API Key/Token, Auth-Key, Passwords, Credentials, etc.(This task can be automated by using tools like MobSF) | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C15** | **Insecure Coding Practice** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Insecure coding practice refers to the use of coding techniques or practices that do not adequately protect an application or system from security vulnerabilities or threats, such as using weak passwords or failing to properly validate user input. Insecure coding practices can make an application or system more susceptible to attacks or data breaches. To prevent insecure coding practices, developers should follow best practices for secure coding and regularly review and test their code for vulnerabilities. |  |  |
+| 1 | Check for use of Insecure Random Number Generator functions (Like generating guessable OTP) | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check for use of Insecure functions or insure functions/objects calling | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 3 | Uses of weak cryptography or easily reversible encryption method (like MD5 Hash, Base64 Encoding) | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 4 | Check for any other Insecure Coding Weakness presence | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C16** | **Insecure Deeplinks** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Insecure deeplinks in Android can allow attackers to access sensitive data or functionality within an app. Developers can prevent this by validating and securing deeplinks and implementing appropriate security controls. |  |  |
+| 1 | Check for any explicit deeplink that PendingIntent to a specific location within the application | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check for any implicit deeplink that refers to a specific destination in an app when the deeplink is invoked | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C17** | **Missing Integrity Checks** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Integrity checks in Android refer to the process of verifying the authenticity or integrity of an app's source code, to ensure that it has not been tampered with or modified by an unauthorized party. This can help protect against attacks that aim to inject malicious code or modify the app's functionality, such as man-in-the-middle attacks or repackaging attacks. |  |  |
+| 1 | Decompile the application, modify its code, recompile it, and sign it to check if it still functions properly or not. | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C18** | **Insecure Android Permissions** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Android applications have a number of permissions that can be set in the "AndroidManifest.xml" file. If these permissions are not properly filtered or validated, they can be exploited. |  |  |
+| 1 | Check for clear text traffic option enable or not in "AndroidManifest.xml" file | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check for debug mode option enable or not in "AndroidManifest.xml" file | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 3 | Check for backup mode option enable or not in "AndroidManifest.xml" file | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 4 | Check for any other Unnecessary Permission in "AndroidManifest.xml" file | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C19** | **Background Screen Caching** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Screen caching is a mobile vulnerability, caused due to a performance/usability feature present in mobile OS’s. |  |  |
+| 1 | Check for screenshots are taken when the application is sent to background | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C20** | **Insecure Firebase Database** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Firebase Database is a cloud-based real-time database service that allows developers to store and sync data across multiple devices and platforms. |  |  |
+| 1 | Append ".json" payload at the end of Firebase instance to see if "read" permission are enable or not | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Also try replacing "firebaseio.com" with "appspot.com" with "/.json" appended at the end may allow you to access appspot instance. (Check for CORS in Firebase) | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C21** | **Android Lock/Biometric Authentication Bypass** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Some applications use the Android Screen Lock/Biometric Authentication to validate the user before providing any specific service or before launching the application's main interface. |  |  |
+| 1 | If the application uses Android Lock/Biometric Authentication check for that can be bypassed or not in runtime by runtime hooking or code level modification | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C22** | **Key-Checks in Dynamic Analysis** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | Some applications use the Android Screen Lock/Biometric Authentication to validate the user before providing any specific service or before launching the application's main interface. |  |  |
+| 1 | Checks for all possible the possible test cases that’s are applicable on API Check (Use a comprehensive API checklist) | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check for Broken Access Controls and Authentications (Checks mainly in server side) | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 3 | Checks for Server-Side Injections and Security misconfigurations | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 4 | Check for Sensitive Data exposer | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 5 | Fuzzing | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+| **C--** | **Some Other Checks** | Discovered | Undiscoverd |
+|:---:|---|:---:|:---:|
+|  | N/A |  |  |
+| 1 | Check for the application doesn't reuse the same cryptographic key for multiple purposes | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 2 | Check for any sensitive data or information exposed through the user interface or leaks to screenshots or not | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 3 | Check for whether the keyboard cache for the application is disable or not | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 4 | Check the application does not allow users to copy/paste any secret data (like passwords, credit card info, etc) | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 5 | Check if the sensitive data is not masked when performing app switching | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+| 6 | Check for the Third-Party Keyboard applications that are disabled specifically in the sensitive fields | <ul><li>[ ] </li></ul> | <ul><li>[ ] </li></ul> |
+
+__** Note: This list does not follow the OWASP vulnerability indexing order.__
